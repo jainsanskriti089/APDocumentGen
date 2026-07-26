@@ -79,16 +79,13 @@ All required documents are merged into a single PDF packet ready for the patient
 
 ```text
 APDocumentGen/
-├── main.go
-├── parser/
-├── rules/
-├── generator/
+├── pdf_sb.go
 ├── templates/      # Excluded from repository
-├── output/
+├── output/         # Excluded from repository
 └── README.md
 ```
 
-> **Note:** PDF templates used in production are intentionally excluded from this repository to protect clinic resources and comply with healthcare privacy and office security requirements.
+> **Note:** PDF templates and output used in production are intentionally excluded from this repository to protect clinic resources and comply with healthcare privacy and office security requirements.
 
 ---
 
@@ -133,7 +130,7 @@ go mod download
 Run the application against a daily appointment schedule:
 
 ```bash
-go run main.go appointments.csv
+go run pdf_sb.go appointments.csv
 ```
 
 or after building:
@@ -176,11 +173,9 @@ This approach makes the system:
 
 ## 🎯 Future Improvements
 
-- 🌐 Develop a user-friendly web interface for non-technical staff
-- ☁️ Deploy to the cloud for centralized access across multiple clinics
+- 🌐 Develop a user-friendly web interface for non-technical staf
+- ☁️ Deploy to the cloud for centralized access across multiple clinics + authorization
 - 🤖 Implement an autonomous agent that monitors appointment exports and automatically generates patient packets
-- ⚙️ Create a configurable rule editor for clinic administrators
-- 🏥 Integrate with Electronic Health Record (EHR) systems
 - 📧 Send notifications when document generation is complete
 
 ---
